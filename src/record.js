@@ -18,7 +18,7 @@ Record.prototype.toData = function() {
    for( var i = 0; i < this.entries.length; i++ ) {
         this.entries[i].is_new = false;
     }
-    return JSON.stringify(this.entries); 
+    return JSON.stringify(this.entries);
 }
 
 Record.prototype.isValidData = function(data) {
@@ -39,7 +39,7 @@ Record.prototype.fromData = function(data) {
 }
 
 Record.prototype.Encrypt = function( key ) {
-    var data = this.toData(); 
+    var data = this.toData();
     console.log( "Encrypting " + data.length + " bytes of record." );
     return encrypt( data, key );
 }
@@ -53,7 +53,7 @@ Record.prototype.Decrypt = function( algo, key, data, success, error ) {
             success();
         }
         catch(e) {
-            error(e); 
+            error(e);
         }
     };
 
@@ -71,3 +71,4 @@ Record.prototype.Decrypt = function( algo, key, data, success, error ) {
     }
 }
 
+export default Record;
